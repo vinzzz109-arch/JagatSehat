@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JagatSehat - Pusat Layanan Kesehatan</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3b82f6; /* Warna biru kesehatan */
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 14px;
+        }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-actions i {
+            cursor: pointer;
+            color: #3b82f6;
+            font-size: 16px;
+        }
+        .btn-pesan-header {
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding: 0 20px 50px;
+            border-bottom: 1.5px solid #eaeaea;
+        }
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        .hero-text h1 {
+            color: #1e3a8a; /* Biru tua elegan */
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 13.5px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .btn-pesan-hero {
+            background-color: #2563eb;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 20px;
+            /* Efek glow diubah menjadi biru muda (cyan/blue glow) */
+            box-shadow: 0px 0px 50px 15px rgba(59, 130, 246, 0.4); 
+        }
+
+        /* Layanan (Menu) Section */
+        .menu-section {
+            max-width: 1100px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .menu-section h2 {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .menu-card {
+            background-color: #eff6ff; /* Latar belakang biru sangat muda */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dbeafe;
+        }
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .menu-card h3 {
+            font-size: 16px;
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .menu-card p {
+            font-size: 12px;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a; /* Warna dark blue/slate */
+            color: #fff;
+            padding: 50px 20px 20px;
+            margin-top: 50px;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .footer-col p {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .social-icons .fa-facebook { color: #1877F2; }
+        .social-icons .fa-instagram { color: #E4405F; }
+        .social-icons .fa-twitter { color: #1DA1F2; }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #334155;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header, .hero, .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-links, .nav-actions {
+                margin-top: 15px;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            .hero-image {
+                justify-content: center;
+                padding-right: 0;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-col {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">JagatSehat</div>
+        <nav class="nav-links">
+            <a href="#">Beranda</a>
+            <a href="#">Layanan</a>
+            <a href="#">Fasilitas</a>
+            <a href="#">Hubungi Kami</a>
+        </nav>
+        <div class="nav-actions">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-user"></i>
+            <a href="#" class="btn-pesan-header">Buat Janji</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Solusi Kesehatan<br>Keluarga Anda</h1>
+            <p>Dapatkan pelayanan medis terbaik dari tenaga kesehatan profesional kami. Kami berkomitmen untuk menjaga kesehatan Anda dan keluarga dengan fasilitas modern, teknologi terkemuka, dan pelayanan yang ramah. Jadwalkan konsultasi Anda hari ini dan mulai langkah hidup sehat!</p>
+            <button class="btn-pesan-hero">Konsultasi Sekarang</button>
+        </div>
+        <div class="hero-image">
+            <!-- Gambar Dokter/Medis dengan efek glow biru -->
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop" alt="Dokter Profesional">
+        </div>
+    </section>
+
+    <!-- Menu / Layanan Section -->
+    <section class="menu-section">
+        <h2>Layanan Medis Kami</h2>
+        <div class="menu-grid">
+            <!-- Layanan 1 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=400&auto=format&fit=crop" alt="Pemeriksaan Umum">
+                <h3>Pemeriksaan Umum</h3>
+                <p>Konsultasi dokter umum untuk mendiagnosis dan menangani keluhan kesehatan dasar secara cepat dan tepat.</p>
+            </div>
+            <!-- Layanan 2 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=400&auto=format&fit=crop" alt="Konsultasi Gizi">
+                <h3>Konsultasi Gizi</h3>
+                <p>Program diet dan nutrisi yang dipersonalisasi oleh ahli gizi untuk menjaga berat badan dan imunitas tubuh yang ideal.</p>
+            </div>
+            <!-- Layanan 3 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=400&auto=format&fit=crop" alt="Perawatan Gigi">
+                <h3>Kesehatan Gigi</h3>
+                <p>Pemeriksaan gigi rutin, pembersihan karang gigi, hingga perawatan estetika oleh dokter gigi spesialis.</p>
+            </div>
+            <!-- Layanan 4 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=400&auto=format&fit=crop" alt="Kesehatan Anak">
+                <h3>Kesehatan Anak (Pediatri)</h3>
+                <p>Layanan medis khusus tumbuh kembang anak dan vaksinasi lengkap dengan pendekatan yang ramah.</p>
+            </div>
+            <!-- Layanan 5 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=400&auto=format&fit=crop" alt="Farmasi">
+                <h3>Layanan Farmasi</h3>
+                <p>Penyediaan obat-obatan berkualitas dengan resep dokter maupun obat bebas terbatas secara cepat.</p>
+            </div>
+            <!-- Layanan 6 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=400&auto=format&fit=crop" alt="Laboratorium">
+                <h3>Laboratorium Klinis</h3>
+                <p>Fasilitas tes darah, urine, dan pemeriksaan patologi lainnya dengan tingkat akurasi serta privasi tinggi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Hubungi Kami</h4>
+                <p>Lokasi di Skaneda</p>
+                <p>WA 086767676767</p>
+                <p>JagatSehat@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>JagatSehat</h4>
+                <p>Klinik Kesehatan SMK Negeri 2 Mojokerto</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Jam Operasional</h4>
+                <p>Setiap Hari: 08.00 - 20.00 WIB</p>
+                <p>UGD 24 Jam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 All Rights Reserved By rpl_skaneda</p>
+        </div>
+    </footer>
+
+</body>
+</html>
